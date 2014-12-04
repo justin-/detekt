@@ -45,8 +45,8 @@ rule FinSpy
         $skyperec2 = /Global\\\{A48F1A32\-A340\-11D0\-BC6B\-00A0C903%\.04X\}/ wide
         //$skyperec3 = /(1411|1421|1431|1451)[0-9A-F]{8}\.dat/ wide ascii
 
-        $mouserec1 = /(m)sc183Q000\.dat/ wide ascii
-        $mouserec2 = /2201[0-9A-F]{8}\.dat/ wide ascii
+        //$mouserec1 = /(m)sc183Q000\.dat/ wide ascii
+        //$mouserec2 = /2201[0-9A-F]{8}\.dat/ wide ascii
 
         $driver = /\\\\\\\\\.\\\\driverw/ wide ascii
 
@@ -64,5 +64,5 @@ rule FinSpy
         $mssounddx = /(S)ystem\\CurrentControlSet\\Services\\mssounddx/ wide
 
     condition:
-        (8 of ($password*) or any of ($screenrec*) or $micrec or any of ($skyperec*) or any of ($mouserec*) or $driver or any of ($janedow*) or any of ($bootkit*) or $typo1 or $mssounddx) and not any of ($filter*)
+        (8 of ($password*) or any of ($screenrec*) or $micrec or any of ($skyperec*) or $driver or any of ($janedow*) or any of ($bootkit*) or $typo1 or $mssounddx) and not any of ($filter*)
 }
