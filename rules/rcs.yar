@@ -30,8 +30,20 @@ rule RCS_Scout
         $lookma5 = /(N)ot sure what's happening/ wide
         $lookma6 = /(L)ook ma, no thread id\! \\\\o\// wide        
 
+        $rcs94_batch1 = /437890\.bat/ wide ascii
+        $rcs94_batch2 = /124904\.bat/ wide ascii
+        $rcs94_batch3 = /391294\.bat/ wide ascii
+
+        $rcs95_batch1 = /9348690\.bat/ wide
+        $rcs95_batch2 = /4204902\.bat/ wide
+        $rcs95_batch3 = /6913291\.bat/ wide
+
+        $rcs96_batch1 = /3984096\.bat/ wide
+        $rcs96_batch2 = /2094402\.bat/ wide
+        $rcs96_batch3 = /1926319\.bat/ wide
+
     condition:
-        (all of ($engine*) or all of ($start*) or all of ($upd*) or 4 of ($lookma*)) and not any of ($filter*)
+        (all of ($engine*) or all of ($start*) or all of ($upd*) or 4 of ($lookma*) or all of ($rcs94_batch*) or all of ($rcs95_batch*) or all of ($rcs96_batch*)) and not any of ($filter*)
 }
 
 rule RCS_Backdoor
